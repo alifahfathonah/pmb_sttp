@@ -103,23 +103,14 @@
     </div>
 
     <div class="form-group">
-      <label for="pil">Pilihan 1</label>
+      <label for="pil">Pilihan Jurusan</label>
       <select class="custom-select form-control" name="pil" id="pil">
         <?php foreach ($jur as $value) :?>
           <option <?php echo $calon['pil']==$value->id_jur ? 'selected':''; ?> value="<?php echo $value->id_jur ?>" ><?php echo $value->nm_jur; ?></option>
         <?php endforeach ?>
       </select>
     </div>
-
-    <div class="form-group">
-      <label for="pil2">Pilihan 2</label>
-      <select class="custom-select form-control" name="pil2" id="pil2">
-        <?php foreach ($jur as $value) :?>
-          <option <?php echo $calon['pil2']==$value->id_jur ? 'selected':''; ?> value="<?php echo $value->id_jur ?>" ><?php echo $value->nm_jur; ?></option>
-        <?php endforeach ?>
-      </select>
-    </div>
-
+<!-- 
     <div class="form-group">
       <label for="photo">Foto</label>
       <input name="photo" type="file" class="form-control" id="photo" placeholder="Foto">
@@ -128,14 +119,14 @@
           <a href="<?= site_url('uploads/').$calon['photo'];?>" target="_blank" class="btn btn-outline-secondary" type="button">View Photo</a>
       </div>
     </div>
-
-    <div class="form-check">
+ -->
+ <!--    <div class="form-check">
       <label class="form-check-label" for="exampleCheck1">
         <p>*Maksimal ukuran foto 900kb</p>
         <p>*Format file jpg</p>
       </label>
     </div>
-  </div>
+  </div> -->
   <!-- /.card-body -->
 
   <div class="card-footer">

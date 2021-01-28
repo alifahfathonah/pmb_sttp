@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 date_default_timezone_set('Asia/Jakarta');
 
-$config['base_url'] = 'https://pmb.hiskia.dev';
+$config['base_url'] = 'http://localhost/pmb_sttp';
 /*
 |--------------------------------------------------------------------------
 | Index File

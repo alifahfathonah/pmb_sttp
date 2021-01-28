@@ -61,13 +61,19 @@ class Pendaftaran extends CI_Controller {
 		$this->form_validation->set_rules('nik','NIK','required|max_length[16]');
 		$this->form_validation->set_rules('nisn','NISN','required|max_length[10]');
 		$data=$this->input->post();
+		$taActive=$this->db->get_where('tahun',['status'=>'y'])->row_array()['tahun'];
+		if ($taActive==null) {
+			echo 'Belum ada tahun aktif !';
+			die();
+		};
+		$data['ta']=$taActive;
 		// no_pendaftaran
 		$this->db->select('*');
 		$this->db->from('pendaftaran');
 		$this->db->order_by('created_at','desc');
+		$this->db->where('pendaftaran.ta',$data['ta']);
 		$last=$this->db->get()->row_array();
-		// printf($last['no_daftar']);
-		// die();
+
 		if ($last!=null) {
 			$getLast=substr(strval($last['no_daftar']), -3);
 			$lastId=intval($getLast)+1;
@@ -76,55 +82,33 @@ class Pendaftaran extends CI_Controller {
 		};
 		$data['jur']=$this->db->get('jurusan')->result();	
 		$data['created_at']=date('Y-m-d h:m:i');
-		$taActive=$this->db->get_where('tahun',['status'=>'y'])->row_array()['tahun'];
-		if ($taActive==null) {
-			echo 'Belum ada tahun aktif !';
-			die();
-		};
-		$data['ta']=$taActive;
+		
 		$year=substr( date('Y'), -2);
 		$month=substr( date('m'), -2);
 		$jurkode=$this->db->get_where('jurusan',['id_jur'=>$data['pil']])->row_array()['sym'];
 		$data['no_daftar']=$jurkode.$year.$month.str_pad($lastId, 3, '0', STR_PAD_LEFT);
 		// end of no pendaftaran
-		$config['upload_path']          = './uploads/foto/';
-		$config['file_name']            = 'mhs_'.date('YmdHis').'_'.uniqid();
-		$config['allowed_types']        = 'jpg';
-		$config['max_size']             = 1024;
-		// echo "<pre>";
-		// print_r($data);
-		// print_r($_FILES);
-		// echo "</pre>";
-		// die();
-		$this->load->library('upload', $config);
 		if ($this->form_validation->run()) {
-			if ( ! $this->upload->do_upload('photo')){
-				$this->session->set_flashdata('input', $data);
-				$this->session->set_flashdata('error', $this->upload->display_errors());
-				// $this->load->view('admin/pendaftaran/index', $data);
-				redirect(site_url('adminku/pendaftaran'));
-			}else{
-				unset($data['jur']);
-				$data['photo'] = 'foto/'.$this->upload->data("file_name");
-				$data['nm_lkp']=strtoupper($data['nm_lkp']);
-				$data['tmp_lhr']=strtoupper($data['tmp_lhr']);
-				$data['alm_lkp']=strtoupper($data['alm_lkp']);
-				$data['gol_drh']=strtoupper($data['gol_drh']);
-				$data['wrg_ngr']=strtoupper($data['wrg_ngr']);
-				$data['nm_ortu']=strtoupper($data['nm_ortu']);
-				$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
-				$data['nm_skl']=strtoupper($data['nm_skl']);
-				$data['alm_skl']=strtoupper($data['alm_skl']);
-				$data['jrs_skl']=strtoupper($data['jrs_skl']);
-				$this->db->insert('pendaftaran', $data);
-				$this->session->set_flashdata('message', 'Data berhasil di input');
-				redirect(site_url('adminku/pendaftaran'));
-			}
+			unset($data['jur']);
+			$data['nm_lkp']=strtoupper($data['nm_lkp']);
+			$data['tmp_lhr']=strtoupper($data['tmp_lhr']);
+			$data['alm_lkp']=strtoupper($data['alm_lkp']);
+			$data['gol_drh']=strtoupper($data['gol_drh']);
+			$data['wrg_ngr']=strtoupper($data['wrg_ngr']);
+			$data['nm_ortu']=strtoupper($data['nm_ortu']);
+			$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
+			$data['nm_skl']=strtoupper($data['nm_skl']);
+			$data['alm_skl']=strtoupper($data['alm_skl']);
+			$data['jrs_skl']=strtoupper($data['jrs_skl']);
+			$this->db->insert('pendaftaran', $data);
+			$this->session->set_flashdata('message', 'Data berhasil di input');
+			redirect(site_url('adminku/pendaftaran'));
 		}else{
-			$this->session->set_flashdata('input', $data);
 			$this->session->set_flashdata('error', validation_errors());
+			$this->session->set_flashdata('input', $data);
 			redirect(site_url('adminku/pendaftaran'));
 		}
+
 	}
 	public function edit()
 	{

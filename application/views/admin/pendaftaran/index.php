@@ -171,7 +171,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="pil">Pilihan 1</label>
+                  <label for="pil">Pilihan Jurusan</label>
                   <select class="custom-select form-control" name="pil" id="pil">
                     <?php if ($this->session->flashdata('input')):?>
                       <?php foreach ($jur as $value) :?>
@@ -185,22 +185,7 @@
                     </select>
                   </div>
 
-                  <div class="form-group">
-                    <label for="pil2">Pilihan 2</label>
-                    <select class="custom-select form-control" name="pil2" id="pil2">
-                      <?php if ($this->session->flashdata('input')):?>
-                        <?php foreach ($jur as $value) :?>
-                          <option <?php echo $this->session->flashdata('input')['pil2']==$value->id_jur ? 'selected':''; ?> value="<?php echo $value->id_jur ?>" ><?php echo $value->nm_jur; ?></option>
-                        <?php endforeach ?>
-                        <?php else: ?>
-                          <?php foreach ($jur as $value) :?>
-                            <option value="<?php echo $value->id_jur ?>" ><?php echo $value->nm_jur; ?></option>
-                          <?php endforeach ?>
-                        <?php endif ?>
-                      </select>
-                    </div>
-
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                       <label for="photo">Foto</label>
                       <input name="photo" type="file" required class="form-control" id="photo" placeholder="Foto">
                     </div>
@@ -210,7 +195,7 @@
                         <p>*Maksimal ukuran foto 900kb</p>
                         <p>*Format file jpg</p>
                       </label>
-                    </div>
+                    </div> -->
                   </div>
                   <!-- /.card-body -->
 
@@ -248,7 +233,7 @@
                   <th>No Daftar</th>
                   <th>Nama Lengkap</th>
                   <th>NISN</th>
-                  <th>Pilihan 1</th>
+                  <th>Pilihan Jurusan</th>
                   <th>Actions</th>
                 </thead>
               </table>
