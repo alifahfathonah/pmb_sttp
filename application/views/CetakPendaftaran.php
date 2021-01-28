@@ -40,8 +40,8 @@
 		<tr>
 			<td style=" width:300px; padding-bottom: 10px;" >NO PENDAFTARAN ONLINE</td>
 			<td style="padding-bottom: 10px;" ><?php echo $calon['no_daftar']; ?></td>
-			<td rowspan="5" style=" width:300px; padding-bottom: 10px; text-align: center;" >
-				<img width="150" style="margin-left: -45px;" src="<?php echo base_url('assets/qr/').$calon['no_daftar'].'.png'?>">
+			<td rowspan="5" style=" width:300px; padding-bottom: 10px; vertical-align: initial;text-align: right;" >
+				<img width="150" style="margin-left: 0;" src="<?php echo base_url('assets/qr/').$calon['no_daftar'].'.png'?>">
 			</td>
 		</tr>
 		<tr>
@@ -84,8 +84,7 @@
 			<td style="padding-bottom: 10px;" ><?php echo $calon['no_telp']; ?></td>
 		</tr>
 	</table>
-	<br>
-	<table style="margin-top: 25px; font-size: 12px;">
+	<table style="margin-top: 0px; font-size: 12px;">
 		<tbody>
 			<tr>
 				<td style=" width:300px; padding-bottom: 10px" >AGAMA</td>
@@ -119,23 +118,16 @@
 					?>
 				</td>
 			</tr>
-			<tr>
-				<td style="vertical-align:middle;" >
-					<div style="width:3cm; height: 4cm; border: solid 2px; text-align: center; line-height: 150px; "><p style="vertical-align: middle;" >Tempel foto 3x4</p></div>
-				</td>
-			</tr>
 		</tbody>
 	</table>
 	<br>
 	<table style="font-size: 12px;" >
 		<tbody>
 			<tr>
-				<td style="text-align: center; " >
-					<p>Mengetahui, <br>Orang Tua / Wali</p>
-					<br><br><br>
-					<p>(.................................)</p>
+				<td style="vertical-align:middle;" >
+					<div style="width:3cm; height: 4cm; border: solid 2px; text-align: center; line-height: 150px; "><p style="vertical-align: middle;" >Tempel foto 3x4</p></div>
 				</td>
-				<td width="50%" style="text-align: center;">
+				<td width="50%" style="text-align: center;vertical-align: initial;">
 					<p>Pati, <?php echo date('d').' ' ?><?php $bulan=['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']; echo $bulan[intval(date('m'))-1].' '.date('Y'); ?><br>
 					Calon Mahasiswa Baru</p>
 					<br><br><br>	
