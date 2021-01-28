@@ -120,6 +120,16 @@ class Pendaftaran extends CI_Controller {
 	public function update()
 	{
 		$data=$this->input->post();
+		$data['nm_lkp']=strtoupper($data['nm_lkp']);
+		$data['tmp_lhr']=strtoupper($data['tmp_lhr']);
+		$data['alm_lkp']=strtoupper($data['alm_lkp']);
+		$data['gol_drh']=strtoupper($data['gol_drh']);
+		$data['wrg_ngr']=strtoupper($data['wrg_ngr']);
+		$data['nm_ortu']=strtoupper($data['nm_ortu']);
+		$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
+		$data['nm_skl']=strtoupper($data['nm_skl']);
+		$data['alm_skl']=strtoupper($data['alm_skl']);
+		$data['jrs_skl']=strtoupper($data['jrs_skl']);
 		$calon=$this->db->get_where('pendaftaran',['id_dftr'=>$data['id_dftr']])->row_array();
 		if ($_FILES['photo'] && $_FILES['photo']['name'] != null) {
 			$current_file = "uploads/".$calon['photo'];
