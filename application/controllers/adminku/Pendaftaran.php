@@ -42,7 +42,7 @@ class Pendaftaran extends CI_Controller {
 				"<button class='btn btn-primary' data-toggle='modal' data-target='#modal-detail' onclick='detail($r->id_dftr)'>Detail</button> ".
 				"<a href='".site_url('daftar/cetak/').$r->no_daftar."' target='_blank' class='btn btn-warning' >Cetak</a> ".
 				"<button class='btn btn-success' data-toggle='modal' data-target='#modal-edit' onclick='edit($r->id_dftr)'>Edit</button> ".
-				"<button class='btn btn-danger' onclick='hapus($r->id_dftr)'>Hapus</button>",
+				"<button id='hps".$r->id_dftr."' class='btn btn-danger' onclick='hapus($r->id_dftr)'>Hapus</button>",
 			);
 		}
 

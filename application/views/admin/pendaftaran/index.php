@@ -343,6 +343,9 @@
                 url: "<?php echo site_url('adminku/pendaftaran/hapus') ?>",
                 type:'post',
                 data:data,
+                beforeSend:function(){
+                  $('#hps'+id).html('Processing <i class="fas fa-sync-alt fa-spin" ></i>');
+                },
                 success: function(result){
                   tabel.ajax.reload()
                 }
