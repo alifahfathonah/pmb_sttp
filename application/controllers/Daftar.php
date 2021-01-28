@@ -117,7 +117,7 @@ class Daftar extends CI_Controller {
 
         $image_name=$no_daftar.'.png'; //buat name dari qr code sesuai dengan nim
 
-        $params['data'] = $no_daftar.', '.$calon['nm_lkp'].', '.$jur['nm_jur'].', '.site_url('cetak/').$no_daftar; //data yang akan di jadikan QR CODE
+        $params['data'] = $no_daftar.', '.$calon['nm_lkp'].', '.$jur['nm_jur'].', '.site_url('daftar/cetak/').$no_daftar; //data yang akan di jadikan QR CODE
         $params['level'] = 'H'; //H=High
         $params['size'] = 10;
         $params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
