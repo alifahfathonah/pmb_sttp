@@ -98,12 +98,7 @@
     </div>
 
     <div class="form-group">
-      <label for="jrs_skl">Jurusan Sekolah</label>
-      <input style="text-transform:uppercase" required type="text" class="form-control" value="<?php echo $calon['jrs_skl'] ?>" name="jrs_skl" id="jrs_skl" placeholder="Jurusan Sekolah">
-    </div>
-
-    <div class="form-group">
-      <label for="pil">Pilihan Jurusan</label>
+      <label for="pil">Pilihan Program Studi</label>
       <select class="custom-select form-control" name="pil" id="pil">
         <?php foreach ($jur as $value) :?>
           <option <?php echo $calon['pil']==$value->id_jur ? 'selected':''; ?> value="<?php echo $value->id_jur ?>" ><?php echo $value->nm_jur; ?></option>

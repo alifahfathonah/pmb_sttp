@@ -99,7 +99,6 @@ class Pendaftaran extends CI_Controller {
 			$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
 			$data['nm_skl']=strtoupper($data['nm_skl']);
 			$data['alm_skl']=strtoupper($data['alm_skl']);
-			$data['jrs_skl']=strtoupper($data['jrs_skl']);
 			$this->db->insert('pendaftaran', $data);
 			$this->session->set_flashdata('message', 'Data berhasil di input');
 			redirect(site_url('adminku/pendaftaran'));
@@ -129,7 +128,6 @@ class Pendaftaran extends CI_Controller {
 		$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
 		$data['nm_skl']=strtoupper($data['nm_skl']);
 		$data['alm_skl']=strtoupper($data['alm_skl']);
-		$data['jrs_skl']=strtoupper($data['jrs_skl']);
 		$calon=$this->db->get_where('pendaftaran',['id_dftr'=>$data['id_dftr']])->row_array();
 		if ($_FILES['photo'] && $_FILES['photo']['name'] != null) {
 			$current_file = "uploads/".$calon['photo'];

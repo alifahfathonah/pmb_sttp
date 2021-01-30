@@ -146,12 +146,7 @@
                         </div>
 
                         <div class="form-group">
-                          <label for="jrs_skl">Jurusan Sekolah</label>
-                          <input style="text-transform:uppercase" required type="text" class="form-control" value="<?php echo $this->session->flashdata('input') ? $this->session->flashdata('input')['jrs_skl']:'' ?>" name="jrs_skl" id="jrs_skl" placeholder="Jurusan Sekolah">
-                        </div>
-
-                        <div class="form-group">
-                          <label for="pil">Pilihan Jurusan</label>
+                          <label for="pil">Pilihan Program Studi</label>
                           <select class="custom-select form-control" name="pil" id="pil">
                             <?php if ($this->session->flashdata('input')):?>
                               <?php foreach ($jur as $value) :?>

@@ -43,7 +43,7 @@
           <td><?php echo $calon['nm_ortu']; ?></td>
         </tr>
         <tr>
-          <td  >PAKET PILIHAN JURUSAN</td>
+          <td  >PILIHAN PROGRAM STUDI</td>
           <td>
             <?php 
             foreach ($jur as $value) {

@@ -103,11 +103,11 @@
 				<td style="padding-bottom: 10px" ><?php echo $calon['nm_ortu']; ?></td>
 			</tr>
 			<tr>
-				<td style=" width:300px; padding-bottom: 10px;" >PEKERJAAN ORTU</td>
+				<td style=" width:300px; padding-bottom: 10px;" >PEKERJAAN ORANG TUA</td>
 				<td style="padding-bottom: 10px;" ><?php echo $calon['pkrj_ortu']; ?></td>
 			</tr>
 			<tr>
-				<td style=" width:300px; padding-bottom: 10px" >PAKET PILIHAN JURUSAN</td>
+				<td style=" width:300px; padding-bottom: 10px" >PILIHAN PROGRAM STUDI</td>
 				<td style="padding-bottom: 10px" >
 					<?php 
 					foreach ($jur as $value) {

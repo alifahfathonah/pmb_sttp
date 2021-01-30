@@ -62,8 +62,7 @@
 			<th style="border:solid;" >Pekerjaan Orang Tua</th>
 			<th style="border:solid;" >Nama Sekolah</th>
 			<th style="border:solid;" >Alamat Sekolah</th>
-			<th style="border:solid;" >Jurusan Sekolah</th>
-			<th style="border:solid;" >Pilihan Jurusan</th>
+			<th style="border:solid;" >Pilihan Program Studi</th>
 		</thead>
 		<tbody>
 			<?php $no=1; foreach ($calon as $value) :?>
@@ -87,7 +86,6 @@
 				<td><?php echo $value->pkrj_ortu; ?></td>
 				<td><?php echo $value->nm_skl; ?></td>
 				<td><?php echo $value->alm_skl; ?></td>
-				<td><?php echo $value->jrs_skl; ?></td>
 				<td><?php
 				foreach ($jur as $v) {
 					if ($v->id_jur==$value->pil) {

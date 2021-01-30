@@ -58,7 +58,6 @@ class Daftar extends CI_Controller {
 			$data['pkrj_ortu']=strtoupper($data['pkrj_ortu']);
 			$data['nm_skl']=strtoupper($data['nm_skl']);
 			$data['alm_skl']=strtoupper($data['alm_skl']);
-			$data['jrs_skl']=strtoupper($data['jrs_skl']);
 			$this->db->insert('pendaftaran', $data);
 			$this->session->set_flashdata('berhasil', $data['no_daftar']);
 			redirect(site_url('daftar/success'));
