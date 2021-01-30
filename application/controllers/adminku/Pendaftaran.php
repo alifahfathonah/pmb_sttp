@@ -173,4 +173,15 @@ class Pendaftaran extends CI_Controller {
 		};
 		$this->db->delete('pendaftaran', ['id_dftr'=>$id]);
 	}
+	public function excell()
+	{
+		$data['tahun']=$this->db->get_where('tahun',['status'=>'y'])->row_array()['tahun'];
+		$data['jur']=$this->db->get('jurusan')->result();
+		if ($data['tahun']==null) {
+			echo 'Tidak ada tahun aktif';
+			die();
+		}
+		$data['calon']=$this->db->get_where('pendaftaran',['ta'=>$data['tahun']])->result();
+		$this->load->view('admin/export', $data);
+	}
 }

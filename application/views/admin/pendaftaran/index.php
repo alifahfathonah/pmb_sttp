@@ -240,7 +240,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-
+              <a href="<?php echo site_url('adminku/pendaftaran/excell') ?>" class="btn btn-primary">Export Excell</a>
             </div>
             <!-- /.card-footer-->
           </div>
