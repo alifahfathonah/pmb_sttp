@@ -20,6 +20,7 @@ class Daftar extends CI_Controller {
 		$this->form_validation->set_rules('nik','NIK','required|max_length[16]');
 		$this->form_validation->set_rules('nisn','NISN','required|max_length[10]');
 		$data=$this->input->post();
+		unset($data['g-recaptcha-response']);
 		// google captcha
 		$recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
 		$userIp=$this->input->ip_address();
@@ -79,7 +80,6 @@ class Daftar extends CI_Controller {
 		// end of no pendaftaran
         if ($this->form_validation->run()) {
         	unset($data['jur']);
-        	unset($data['g-recaptcha-response']);
         	$data['nm_lkp']=strtoupper($data['nm_lkp']);
         	$data['tmp_lhr']=strtoupper($data['tmp_lhr']);
         	$data['alm_lkp']=strtoupper($data['alm_lkp']);
