@@ -1,4 +1,5 @@
 <?php $this->load->view('templates/client_header') ?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -159,6 +160,9 @@
                               <?php endif ?>
                             </select>
                           </div>
+
+                          <div class="g-recaptcha" data-sitekey="6LcrSkgaAAAAAJQ4G7Y4MKkN5Zb5FtxONcgoOuvP"></div>  
+                          <!--                data-sitekey silahkan disesuaikan dengan key yang anda dapat dari google  -->
 
                     <!-- <div class="form-group">
                       <label for="photo">Foto</label>
